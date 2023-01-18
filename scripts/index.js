@@ -9,12 +9,6 @@ const buttons = [
     {short: 'github', text: 'GitHub', url: 'https://github.com/GovnocodedByChapo?tab=repositories'},
 ]
 
-window.onload = function() {
-	var w = window.open();			// Открыть новое пустое окно
-	w.alert("Будет открыт сайт http://professorweb.ru"); 		// Вызвать его метод alert()
-	w.location = "http://professorweb.ru";			// Установить св-во location
-};
-
 function openUrl(url) {
     window.location.replace(url)
     //document.location.href = url;
