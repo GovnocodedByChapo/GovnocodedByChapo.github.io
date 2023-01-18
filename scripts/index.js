@@ -2,17 +2,18 @@
 
 const buttons = [
     {short: 'vk', text: 'VK', url: 'https://vk.com/ya_chapo'},
-    {short: 'vk_group', text: 'Группа VK', url: 'https://vk.com/chaposcripts'},
+    {short: 'vk_group', text: 'Р“СЂСѓРїРїР° VK', url: 'https://vk.com/chaposcripts'},
     {short: 'tg', text: 'Telegram', url: 'https://telegram.me/ya_chapo'},
     {short: 'discord', text: 'Discord', url: 'https://discord.com/invite/4fNcFYE6WP'},
-    {short: 'bh', text: 'Профиль на BlastHack', url: 'https://www.blast.hk/members/112329/'},
+    {short: 'bh', text: 'РџСЂРѕС„РёР»СЊ РЅР° BlastHack', url: 'https://www.blast.hk/members/112329/'},
     {short: 'github', text: 'GitHub', url: 'https://github.com/GovnocodedByChapo?tab=repositories'},
 ]
 
 
 
 function openUrl(url) {
-    document.location.href = url;
+    window.location.replace(url)
+    //document.location.href = url;
 }
 
 function drawButtons() {
@@ -41,7 +42,7 @@ function createParticle(count = 50) {
 const domain = 'https://govnocodedbychapo.github.io/'
 
 const main = () => {
-    //alert('load')
+    alert('load')
     drawButtons();
     createParticle();
     console.log('document.location', document.location)
