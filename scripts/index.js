@@ -45,7 +45,7 @@ const main = () => {
     drawButtons();
     createParticle();
     for (const item of buttons) {
-        if (document.locations.endsWith(item.short)) {
+        if (document.location.endsWith(item.short)) {
             openUrl(item.url)
         }
     }
