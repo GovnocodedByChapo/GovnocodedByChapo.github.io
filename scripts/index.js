@@ -15,26 +15,26 @@ function openUrl(url) {
 }
 
 function drawButtons() {
-    const div = document.getElementById('buttonsField')
-    for (const button of buttons) {
-        let newButton = document.createElement('button')
-        newButton.setAttribute('class', 'cardButton')
-        newButton.addEventListener('click', () => openUrl(button.url))
-        newButton.textContent = button.text
-        div.append(newButton)
-        //alert(button.text)
-    }
+    //const div = document.getElementById('buttonsField')
+    //for (const button of buttons) {
+    //    let newButton = document.createElement('button')
+    //    newButton.setAttribute('class', 'cardButton')
+    //    newButton.addEventListener('click', () => openUrl(button.url))
+    //    newButton.textContent = button.text
+    //    div.append(newButton)
+    //    //alert(button.text)
+    //}
 }
 
 function createParticle(count = 50) {
-    const div = document.getElementById('particlesdiv')
-    for (let i = 0; i < count; i++) {
-        let newp = document.createElement('span')
-        newp.setAttribute('class', 'particle')
-        newp.setAttribute('style', 'z-index: 0')
-        div.append(newp)
-        console.log('spawned')
-    }
+    //const div = document.getElementById('particlesdiv')
+    //for (let i = 0; i < count; i++) {
+    //    let newp = document.createElement('span')
+    //    newp.setAttribute('class', 'particle')
+    //    newp.setAttribute('style', 'z-index: 0')
+    //    div.append(newp)
+    //    console.log('spawned')
+    //}
 }
 
 const domain = 'https://govnocodedbychapo.github.io/'
