@@ -1,0 +1,63 @@
+body {
+    background: #42275a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #734b6d, #42275a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #734b6d, #42275a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: MontserratLight;
+}
+
+@font-face {
+    font-family: "MontserratExtraLight"; 
+    src: url("../fonts/Montserrat-ExtraLight.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+@font-face {
+    font-family: "MontserratLight"; 
+    src: url("../fonts/Montserrat-Light.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+
+.nextLessonName {
+    font-size: 35px;
+    padding-bottom: 0px;
+}
+
+.nextLessonTip {
+    font-size: 15px;
+    color: gray;
+    margin-top: -30px;
+}
+
+.nextLessonsDiv {
+    padding: 10px;
+    /* position: absolute; */
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+}
+
+table {
+    color: white;
+    font-size: 21px;
+    padding: 10px;
+    width: 1200px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    display: block;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+td {
+    /* border: 1px solid; */
+    border-radius: 5px;
+    border-width: 1px;
+    padding-left: 10px;
+    padding-top: 10px;
+}

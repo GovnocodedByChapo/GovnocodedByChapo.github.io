@@ -51,3 +51,6 @@ const main = () => {
     }
 }
 
+function openSchedule() {
+    window.open("schedule.html")
+}
