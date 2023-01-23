@@ -1,13 +1,11 @@
-const { Manipulation } = require("swiper")
-
 const lessons = [
-    {name: 'Ýêîíîìèêà', teacher: 'Ãîðîäñêàÿ ñóìàøåäøàÿ'},
-    {name: 'Îðãàíèçàöèÿ äåÿòåëüíîñòè', teacher: 'Ãîðîäñêàÿ ñóìàøåäøàÿ'},
-    {name: 'Îñíîâû ìåíåäæìåíòà', teacher: 'Ãîðîäñêàÿ ñóìàøåäøàÿ'},
-    {name: 'Àíãëèéñêèé ÿçûê', teacher: 'Êîðàáåëüíèêîâà'},
-    {name: 'Ýëåêòðîñíàáæåíèå', teacher: 'Áóðåíêîâà Ñâåòëàíà Åãîðîâíà', classroom: 38},
-    {name: 'Ìîíòàæ ýëåêòðè÷åñêèõ ñåòåé', teacher: 'Àòîåâ Ìóðîä ×åòî òàì'},
-    {name: 'Ôèçè÷åñêàÿ êóëüòóðà', teacher: 'Ëàãóòèí Êèðèëë Àëåêñàíäðîâè÷'},
+    {name: 'Ð­ÐºÐ¾Ð½Ð¾Ð¼Ð¸ÐºÐ°', teacher: 'Ð“Ð¾Ñ€Ð¾Ð´ÑÐºÐ°Ñ ÑÑƒÐ¼Ð°ÑˆÐµÐ´ÑˆÐ°Ñ'},
+    {name: 'ÐžÑ€Ð³Ð°Ð½Ð¸Ð·Ð°Ñ†Ð¸Ñ Ð´ÐµÑÑ‚ÐµÐ»ÑŒÐ½Ð¾ÑÑ‚Ð¸', teacher: 'Ð“Ð¾Ñ€Ð¾Ð´ÑÐºÐ°Ñ ÑÑƒÐ¼Ð°ÑˆÐµÐ´ÑˆÐ°Ñ'},
+    {name: 'ÐžÑÐ½Ð¾Ð²Ñ‹ Ð¼ÐµÐ½ÐµÐ´Ð¶Ð¼ÐµÐ½Ñ‚Ð°', teacher: 'Ð“Ð¾Ñ€Ð¾Ð´ÑÐºÐ°Ñ ÑÑƒÐ¼Ð°ÑˆÐµÐ´ÑˆÐ°Ñ'},
+    {name: 'ÐÐ½Ð³Ð»Ð¸Ð¹ÑÐºÐ¸Ð¹ ÑÐ·Ñ‹Ðº', teacher: 'ÐšÐ¾Ñ€Ð°Ð±ÐµÐ»ÑŒÐ½Ð¸ÐºÐ¾Ð²Ð°'},
+    {name: 'Ð­Ð»ÐµÐºÑ‚Ñ€Ð¾ÑÐ½Ð°Ð±Ð¶ÐµÐ½Ð¸Ðµ', teacher: 'Ð‘ÑƒÑ€ÐµÐ½ÐºÐ¾Ð²Ð° Ð¡Ð²ÐµÑ‚Ð»Ð°Ð½Ð° Ð•Ð³Ð¾Ñ€Ð¾Ð²Ð½Ð°', classroom: 38},
+    {name: 'ÐœÐ¾Ð½Ñ‚Ð°Ð¶ ÑÐ»ÐµÐºÑ‚Ñ€Ð¸Ñ‡ÐµÑÐºÐ¸Ñ… ÑÐµÑ‚ÐµÐ¹', teacher: 'ÐÑ‚Ð¾ÐµÐ² ÐœÑƒÑ€Ð¾Ð´ Ð§ÐµÑ‚Ð¾ Ñ‚Ð°Ð¼'},
+    {name: 'Ð¤Ð¸Ð·Ð¸Ñ‡ÐµÑÐºÐ°Ñ ÐºÑƒÐ»ÑŒÑ‚ÑƒÑ€Ð°', teacher: 'Ð›Ð°Ð³ÑƒÑ‚Ð¸Ð½ ÐšÐ¸Ñ€Ð¸Ð»Ð» ÐÐ»ÐµÐºÑÐ°Ð½Ð´Ñ€Ð¾Ð²Ð¸Ñ‡'},
 ]
 
 const alerts = [
@@ -20,40 +18,40 @@ const alerts = [
 
 const schedule = [
     [
-        {name: 'Îðãàíèçàöèÿ äåÿòåëüíîñòè', teacher: 'Ãîðîäñêàÿ ñóìàøåäøàÿ'},
-        {name: 'Ýëåêòðîñíàáæåíèå', teacher: 'Áóðåíêîâà Ñâåòëàíà Åãîðîâíà', classroom: 38},
-        {name: 'Ìîíòàæ ýëåêòðè÷åñêèõ ñåòåé', teacher: 'Àòîåâ Ìóðîä ×åòî òàì'},
+        {name: 'ÐžÑ€Ð³Ð°Ð½Ð¸Ð·Ð°Ñ†Ð¸Ñ Ð´ÐµÑÑ‚ÐµÐ»ÑŒÐ½Ð¾ÑÑ‚Ð¸', teacher: 'Ð“Ð¾Ñ€Ð¾Ð´ÑÐºÐ°Ñ ÑÑƒÐ¼Ð°ÑˆÐµÐ´ÑˆÐ°Ñ'},
+        {name: 'Ð­Ð»ÐµÐºÑ‚Ñ€Ð¾ÑÐ½Ð°Ð±Ð¶ÐµÐ½Ð¸Ðµ', teacher: 'Ð‘ÑƒÑ€ÐµÐ½ÐºÐ¾Ð²Ð° Ð¡Ð²ÐµÑ‚Ð»Ð°Ð½Ð° Ð•Ð³Ð¾Ñ€Ð¾Ð²Ð½Ð°', classroom: 38},
+        {name: 'ÐœÐ¾Ð½Ñ‚Ð°Ð¶ ÑÐ»ÐµÐºÑ‚Ñ€Ð¸Ñ‡ÐµÑÐºÐ¸Ñ… ÑÐµÑ‚ÐµÐ¹', teacher: 'ÐÑ‚Ð¾ÐµÐ² ÐœÑƒÑ€Ð¾Ð´ Ð§ÐµÑ‚Ð¾ Ñ‚Ð°Ð¼'},
     ],
     [
-        {name: 'Îñíîâû ìåíåäæìåíòà', teacher: 'Ãîðîäñêàÿ ñóìàøåäøàÿ'},
+        {name: 'ÐžÑÐ½Ð¾Ð²Ñ‹ Ð¼ÐµÐ½ÐµÐ´Ð¶Ð¼ÐµÐ½Ñ‚Ð°', teacher: 'Ð“Ð¾Ñ€Ð¾Ð´ÑÐºÐ°Ñ ÑÑƒÐ¼Ð°ÑˆÐµÐ´ÑˆÐ°Ñ'},
 
-        {name: 'Îðãàíèçàöèÿ äåÿòåëüíîñòè', teacher: 'Ãîðîäñêàÿ ñóìàøåäøàÿ'},
-        {name: 'Ýëåêòðîñíàáæåíèå', teacher: 'Áóðåíêîâà Ñâåòëàíà Åãîðîâíà', classroom: 38},
+        {name: 'ÐžÑ€Ð³Ð°Ð½Ð¸Ð·Ð°Ñ†Ð¸Ñ Ð´ÐµÑÑ‚ÐµÐ»ÑŒÐ½Ð¾ÑÑ‚Ð¸', teacher: 'Ð“Ð¾Ñ€Ð¾Ð´ÑÐºÐ°Ñ ÑÑƒÐ¼Ð°ÑˆÐµÐ´ÑˆÐ°Ñ'},
+        {name: 'Ð­Ð»ÐµÐºÑ‚Ñ€Ð¾ÑÐ½Ð°Ð±Ð¶ÐµÐ½Ð¸Ðµ', teacher: 'Ð‘ÑƒÑ€ÐµÐ½ÐºÐ¾Ð²Ð° Ð¡Ð²ÐµÑ‚Ð»Ð°Ð½Ð° Ð•Ð³Ð¾Ñ€Ð¾Ð²Ð½Ð°', classroom: 38},
     ], 
     [
-        {name: 'Ýêîíîìèêà', teacher: 'Ãîðîäñêàÿ ñóìàøåäøàÿ'},
-        {name: 'Ýëåêòðîñíàáæåíèå', teacher: 'Áóðåíêîâà Ñâåòëàíà Åãîðîâíà', classroom: 38},
-        {name: 'Ìîíòàæ ýëåêòðè÷åñêèõ ñåòåé', teacher: 'Àòîåâ Ìóðîä ×åòî òàì'},
-        {name: 'Ýêîíîìèêà', teacher: 'Ãîðîäñêàÿ ñóìàøåäøàÿ'},
+        {name: 'Ð­ÐºÐ¾Ð½Ð¾Ð¼Ð¸ÐºÐ°', teacher: 'Ð“Ð¾Ñ€Ð¾Ð´ÑÐºÐ°Ñ ÑÑƒÐ¼Ð°ÑˆÐµÐ´ÑˆÐ°Ñ'},
+        {name: 'Ð­Ð»ÐµÐºÑ‚Ñ€Ð¾ÑÐ½Ð°Ð±Ð¶ÐµÐ½Ð¸Ðµ', teacher: 'Ð‘ÑƒÑ€ÐµÐ½ÐºÐ¾Ð²Ð° Ð¡Ð²ÐµÑ‚Ð»Ð°Ð½Ð° Ð•Ð³Ð¾Ñ€Ð¾Ð²Ð½Ð°', classroom: 38},
+        {name: 'ÐœÐ¾Ð½Ñ‚Ð°Ð¶ ÑÐ»ÐµÐºÑ‚Ñ€Ð¸Ñ‡ÐµÑÐºÐ¸Ñ… ÑÐµÑ‚ÐµÐ¹', teacher: 'ÐÑ‚Ð¾ÐµÐ² ÐœÑƒÑ€Ð¾Ð´ Ð§ÐµÑ‚Ð¾ Ñ‚Ð°Ð¼'},
+        {name: 'Ð­ÐºÐ¾Ð½Ð¾Ð¼Ð¸ÐºÐ°', teacher: 'Ð“Ð¾Ñ€Ð¾Ð´ÑÐºÐ°Ñ ÑÑƒÐ¼Ð°ÑˆÐµÐ´ÑˆÐ°Ñ'},
     ], 
     [
-        {name: 'Àíãëèéñêèé ÿçûê', teacher: 'Êîðàáåëüíèêîâà'},
-        {name: 'Ýêîíîìèêà', teacher: 'Ãîðîäñêàÿ ñóìàøåäøàÿ'},
-        {name: 'Ìîíòàæ ýëåêòðè÷åñêèõ ñåòåé', teacher: 'Àòîåâ Ìóðîä ×åòî òàì'},
-        {name: 'Îñíîâû ìåíåäæìåíòà', teacher: 'Ãîðîäñêàÿ ñóìàøåäøàÿ'},
+        {name: 'ÐÐ½Ð³Ð»Ð¸Ð¹ÑÐºÐ¸Ð¹ ÑÐ·Ñ‹Ðº', teacher: 'ÐšÐ¾Ñ€Ð°Ð±ÐµÐ»ÑŒÐ½Ð¸ÐºÐ¾Ð²Ð°'},
+        {name: 'Ð­ÐºÐ¾Ð½Ð¾Ð¼Ð¸ÐºÐ°', teacher: 'Ð“Ð¾Ñ€Ð¾Ð´ÑÐºÐ°Ñ ÑÑƒÐ¼Ð°ÑˆÐµÐ´ÑˆÐ°Ñ'},
+        {name: 'ÐœÐ¾Ð½Ñ‚Ð°Ð¶ ÑÐ»ÐµÐºÑ‚Ñ€Ð¸Ñ‡ÐµÑÐºÐ¸Ñ… ÑÐµÑ‚ÐµÐ¹', teacher: 'ÐÑ‚Ð¾ÐµÐ² ÐœÑƒÑ€Ð¾Ð´ Ð§ÐµÑ‚Ð¾ Ñ‚Ð°Ð¼'},
+        {name: 'ÐžÑÐ½Ð¾Ð²Ñ‹ Ð¼ÐµÐ½ÐµÐ´Ð¶Ð¼ÐµÐ½Ñ‚Ð°', teacher: 'Ð“Ð¾Ñ€Ð¾Ð´ÑÐºÐ°Ñ ÑÑƒÐ¼Ð°ÑˆÐµÐ´ÑˆÐ°Ñ'},
     ],
     [
-        {name: 'Îðãàíèçàöèÿ äåÿòåëüíîñòè', teacher: 'Ãîðîäñêàÿ ñóìàøåäøàÿ'},
-        {name: 'Ýëåêòðîñíàáæåíèå', teacher: 'Áóðåíêîâà Ñâåòëàíà Åãîðîâíà', classroom: 38},
-        {name: 'Îñíîâû ìåíåäæìåíòà', teacher: 'Ãîðîäñêàÿ ñóìàøåäøàÿ'},
-        {name: 'Ìîíòàæ ýëåêòðè÷åñêèõ ñåòåé', teacher: 'Àòîåâ Ìóðîä ×åòî òàì'},
+        {name: 'ÐžÑ€Ð³Ð°Ð½Ð¸Ð·Ð°Ñ†Ð¸Ñ Ð´ÐµÑÑ‚ÐµÐ»ÑŒÐ½Ð¾ÑÑ‚Ð¸', teacher: 'Ð“Ð¾Ñ€Ð¾Ð´ÑÐºÐ°Ñ ÑÑƒÐ¼Ð°ÑˆÐµÐ´ÑˆÐ°Ñ'},
+        {name: 'Ð­Ð»ÐµÐºÑ‚Ñ€Ð¾ÑÐ½Ð°Ð±Ð¶ÐµÐ½Ð¸Ðµ', teacher: 'Ð‘ÑƒÑ€ÐµÐ½ÐºÐ¾Ð²Ð° Ð¡Ð²ÐµÑ‚Ð»Ð°Ð½Ð° Ð•Ð³Ð¾Ñ€Ð¾Ð²Ð½Ð°', classroom: 38},
+        {name: 'ÐžÑÐ½Ð¾Ð²Ñ‹ Ð¼ÐµÐ½ÐµÐ´Ð¶Ð¼ÐµÐ½Ñ‚Ð°', teacher: 'Ð“Ð¾Ñ€Ð¾Ð´ÑÐºÐ°Ñ ÑÑƒÐ¼Ð°ÑˆÐµÐ´ÑˆÐ°Ñ'},
+        {name: 'ÐœÐ¾Ð½Ñ‚Ð°Ð¶ ÑÐ»ÐµÐºÑ‚Ñ€Ð¸Ñ‡ÐµÑÐºÐ¸Ñ… ÑÐµÑ‚ÐµÐ¹', teacher: 'ÐÑ‚Ð¾ÐµÐ² ÐœÑƒÑ€Ð¾Ð´ Ð§ÐµÑ‚Ð¾ Ñ‚Ð°Ð¼'},
     ]
 ]
 
-const getCurrentLessonIndex = () => {
+function getCurrentLessonIndex() {
     const date = new Date(Date.now())
-    const h = 10//date.getHours()
-    const m = 20//date.getMinutes()
+    const h = date.getHours()
+    const m = date.getMinutes()
     for (let index = 0; index < alerts.length - 1; index++) {
         const start = alerts[index].start;
         const end = alerts[index].end;
@@ -66,9 +64,9 @@ const getCurrentLessonIndex = () => {
     return -1;
 }
 
-const getCurrentLesson = () => {
-    const dayIndex = 3//new Date(Date.now()).getDay() - 1
-    const index = getCurrentLessonIndex();
+function getCurrentLesson(offset = 0) {
+    const dayIndex = new Date(Date.now()).getDay() - 1
+    const index = getCurrentLessonIndex() + offset;
     
     if (index == -1) {
         return 'no result (lessonIndex == -1)'
@@ -86,16 +84,13 @@ const getCurrentLesson = () => {
     return schedule[dayIndex][index]
 }
 
-console.log(getCurrentLesson())
-
 function main() {
     const date = new Date(Date.now())
-    const h = date.getHours()
-    const m = date.getMinutes()
-    alert(`Current Time: ${h}:${m}`)
-    const currentLesson = getCurrentLesson();
-    const nextLessonName = document.getElementById('nextLessonName');
-    const nextLessonTip = document.getElementById('nextLessonTip');
-    nextLessonName.textContent = currentLesson.name
-    nextLessonTip.textContent = currentLesson.teacher + (currentLesson.classroom ? `(${currentLesson.classroom})` : '')
+    const currentLesson = getCurrentLesson(1);
+    const textName = currentLesson?.name ?? 'ERROR: currentLesson.name is NULL or UNDEFINED'
+    const textTip = `${currentLesson?.teacher ?? 'teacher is UNDEFINED'} ${currentLesson?.classroom ?? ''}`
+    console.log(textName, textTip)
+    document.getElementById('nextLessonName').textContent = textName
+    document.getElementById('nextLessonTip').textContent = textTip
+    document.getElementById('servertimedebug').textContent = `ServerTime: ${date.getHours()}:${date.getMinutes()}`
 }
