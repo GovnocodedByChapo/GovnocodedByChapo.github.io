@@ -1,68 +1,48 @@
 <!DOCTYPE html>
-<meta charset="UTF-8">
-<link href="style/schedule.css" rel="stylesheet">
-<script src="scripts/schedule.js"></script>
-<html>
-  <body onload="main()">
-    <div class="child" id="buttons">
-      <h1 style="text-align: center;">Расписание 49002-k</h1>
-    </div>
 
-    <div class="nextLessonsDiv">
-      <h1 style="font-size: 20px;">Следующая пара:</h1>
-      <h1 class="nextLessonName" id="nextLessonName">no data received</h1>
-      <h1 class="nextLessonTip" id="nextLessonTip">no data received</h1>
+  <script src="scripts/schedule.js"></script>
+  <meta charset="utf-8" />
+  <title>49002-k</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css" />
+  <link href="style/schedule.css" rel="stylesheet">
 
+<!-- <h1 class="chopoparamebaniyrot">Че по парам?</h1> -->
+<body onload="addCards()">
+  <div class="swiper-container" id="container">
+    <!-- <div class="swiper-wrapper" id="cards"> -->
+      <!-- <div class="swiper-slide"> -->
+        <!-- <h1 class="lessonIndex">Первая пара</h1> -->
+        <!-- <h1 class="lessonName">Lesson Name</h1> -->
+        <!-- <h1 class="lessonAlerts">9:00 - 10:30</h1> -->
+        <!-- <h1 class="lessonInfo">Teacher (#00)</h1> -->
+      <!-- </div> -->
+      <!-- <div class="swiper-slide"> -->
+        <!-- <h1 class="lessonIndex">Вторая пара</h1> -->
+        <!-- <h1 class="lessonName">Lesson Name</h1> -->
+        <!-- <h1 class="lessonAlerts">9:00 - 10:30</h1> -->
+        <!-- <h1 class="lessonInfo">Teacher (#00)</h1> -->
+      <!-- </div> -->
+      <!-- <div class="swiper-slide"> -->
+        <!-- <h1 class="lessonIndex">Третья пара</h1> -->
+        <!-- <h1 class="lessonName">Lesson Name</h1> -->
+        <!-- <h1 class="lessonAlerts">9:00 - 10:30</h1> -->
+        <!-- <h1 class="lessonInfo">Teacher (#00)</h1> -->
+      <!-- </div> -->
+      <!-- <div class="swiper-slide"> -->
+        <!-- <h1 class="lessonIndex">Четвертая пара</h1> -->
+        <!-- <h1 class="lessonName">Lesson Name</h1> -->
+        <!-- <h1 class="lessonAlerts">9:00 - 10:30</h1> -->
+        <!-- <h1 class="lessonInfo">Teacher (#00)</h1> -->
+      <!-- </div> -->
       
-    </div>
-    <br>
-    <table class="tbl">
-      <tr>
-        <thead>
-          <td></td>
-          <th>Понедельник</th>
-          <th>Вторник</th>
-          <th>Среда</th>
-          <th>Четверг</th>
-          <th>Пятница</th>
-        </thead>
-      </tr>
-      <tr>
-        
-      </thead><td>9:00 - 10:30</td></thead>
-        <td>Орг. Деятельности</td>
-        <td>Менеджмент</td>
-        <td>Экономика (1 п)</td>
-        <td>Англ</td>
-        <td>Орг. Деятельности</td>
-      </tr>
-      <tr>
-        <td>10:40 - 12:10</td>
-        <td>Электроснабжение</td>
-        <td>Физ-ра</td>
-        <td>Электроснабжение</td>
-        <td>Экономика</td>
-        <td>Электроснабжение</td>
-      </tr>
-      <tr>
-        <td>12:40 - 14:40</td>
-        <td>Монтаж эл. Сетей</td>
-        <td>Орг. Деятельности</td>
-        <td>Монтаж эл. Сетей</td>
-        <td>Монтаж эл. Сетей</td>
-        <td>Менеджмент</td>
-      </tr>
-      <tr>
-        <td>14:40 - 16:20</td>
-        <td></td>
-        <td>Электроснабжение</td>
-        <td>Экономика (2 п)</td>
-        <td>Менеджмент</td>
-        <td>Монтаж эл. Сетей</td>
-      </tr>
-    </table>
-    
-    <a href="https://vk.com/ya_chapo" style="text-align: center;">bug report</a>
-    <a id="servertimedebug">ServerTime: undefined || NULL</a>
-  </body>
+      
+    <!-- </div> -->
+  
+    <div class="swiper-pagination"></div>
+    <div class="swiper-scrollbar"></div>
+  </div>
+  <!-- Swiper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+  <script src="scripts/schedule-swiper.js"></script>
+</body>
 </html>

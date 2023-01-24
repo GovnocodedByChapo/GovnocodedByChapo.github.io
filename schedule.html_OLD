@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<link href="style/schedule.css" rel="stylesheet">
+<script src="scripts/schedule.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <body onload="main()">
+    <div class="child" id="buttons">
+      <h1 style="text-align: center;">Расписание 49002-k</h1>
+    </div>
+
+    <div class="nextLessonsDiv">
+      <h1 style="font-size: 20px;">Следующая пара:</h1>
+      <h1 class="nextLessonName" id="nextLessonName">no data received</h1>
+      <h1 class="nextLessonTip" id="nextLessonTip">no data received</h1>
+
+      
+    </div>
+    <br>
+    <table class="tbl">
+      <tr>
+        <thead>
+          <td></td>
+          <th>Понедельник</th>
+          <th>Вторник</th>
+          <th>Среда</th>
+          <th>Четверг</th>
+          <th>Пятница</th>
+        </thead>
+      </tr>
+      <tr>
+        
+      </thead><td>9:00 - 10:30</td></thead>
+        <td>Орг. Деятельности</td>
+        <td>Менеджмент</td>
+        <td>Экономика (1 п)</td>
+        <td>Англ</td>
+        <td>Орг. Деятельности</td>
+      </tr>
+      <tr>
+        <td>10:40 - 12:10</td>
+        <td>Электроснабжение</td>
+        <td>Физ-ра</td>
+        <td>Электроснабжение</td>
+        <td>Экономика</td>
+        <td>Электроснабжение</td>
+      </tr>
+      <tr>
+        <td>12:40 - 14:40</td>
+        <td>Монтаж эл. Сетей</td>
+        <td>Орг. Деятельности</td>
+        <td>Монтаж эл. Сетей</td>
+        <td>Монтаж эл. Сетей</td>
+        <td>Менеджмент</td>
+      </tr>
+      <tr>
+        <td>14:40 - 16:20</td>
+        <td></td>
+        <td>Электроснабжение</td>
+        <td>Экономика (2 п)</td>
+        <td>Менеджмент</td>
+        <td>Монтаж эл. Сетей</td>
+      </tr>
+    </table>
+    
+    <a href="https://vk.com/ya_chapo" style="text-align: center;">bug report</a>
+    <a id="servertimedebug">ServerTime: undefined || NULL</a>
+  </body>
+</html>

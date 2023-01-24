@@ -94,3 +94,54 @@ function main() {
     document.getElementById('nextLessonTip').textContent = textTip
     document.getElementById('servertimedebug').textContent = `ServerTime: ${date.getHours()}:${date.getMinutes()}`
 }
+
+function addCards() {
+    console.log('load')
+    let parent = document.getElementById('container')
+    const day = new Date(Date.now()).getDay() - 1
+    let index = 0;
+
+    let w = document.createElement('div')
+    w.setAttribute('class', 'swiper-wrapper')
+    parent.appendChild(w)
+    parent = w
+    for (const lesson of schedule[day]) {
+        index++
+        console.log(lesson)
+        let newCard = document.createElement('div')
+        newCard.setAttribute('class', 'swiper-slide')
+
+        let lessonIndex = document.createElement('h1')
+        lessonIndex.textContent = index
+        lessonIndex.setAttribute('class', 'lessonIndex')
+        newCard.appendChild(lessonIndex)
+
+        let lessonName = document.createElement('h1')
+        lessonName.textContent = lesson.name
+        lessonName.setAttribute('class', 'lessonName')
+        newCard.appendChild(lessonName)
+
+        const a = alerts[day-1]
+        let lessonAlerts = document.createElement('h1')
+        lessonAlerts.textContent = `${a.start.hour}:${a.start.minute} - ${a.end.hour}:${a.end.minute}`
+        lessonAlerts.setAttribute('class', 'lessonAlerts')
+        newCard.appendChild(lessonAlerts)
+
+        let lessonInfo = document.createElement('h1')
+        lessonInfo.textContent = lesson.teacher
+        lessonInfo.setAttribute('class', 'lessonInfo')
+        newCard.appendChild(lessonInfo)
+        
+        parent.append(newCard)
+        
+        // <div class="swiper-slide">
+            {/* <h1 class="lessonIndex">Первая пара</h1> */}
+            {/* <h1 class="lessonName">Lesson Name</h1> */}
+            {/* <h1 class="lessonAlerts">9:00 - 10:30</h1> */}
+            {/* <h1 class="lessonInfo">Teacher (#00)</h1> */}
+        {/* </div> */}
+    }
+}
+
+
+
