@@ -49,6 +49,7 @@ const main = () => {
             openUrl(item.url)
         }
     }
+    
 }
 
 function openSchedule() {
