@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoonLog Checker</title>
+    <link href="style/moonlog.css" rel="stylesheet">
+</head>
+<body>
+    <script src="scripts/moonlogcheck.js"></script>
+    <div class="card">
+        <h1>MoonLog checker</h1>
+        <input id="file" name="myFile" type="file" name="moon" accept="*.log" onchange="readText(this)">
+        <h2 id="errorsCount"></h2>
+        <div class="errorsList" id="errorsList">
+            <div class="mlerror">
+                <h3>script.lua (строка #10, attemp to index a nil value)</h3>
+                <h4>Не удается получить доступ к переменной (нет)</h4>
+            </div>
+
+            <div class="mlerror">
+                <h3>script.lua (строка #10, attemp to index a nil value)</h3>
+                <h4>Не удается получить доступ к переменной (нет)</h4>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
