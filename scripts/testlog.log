@@ -1,0 +1,7 @@
+[23:22:40.519286] (error)	sampevrequire.lua: X:\SAMP Medium PC by chapo\moonloader\sampevrequire.lua:3: samp.events requires SAMPFUNCS
+[23:22:40.519286] (error)	noModuleTest.lua: X:\SAMP Medium PC by chapo\moonloader\noModuleTest.lua:3: module 'mimgui' not found
+[23:22:40.512304] (error)	arz_getPlayer.lua: X:\SAMP Medium PC by chapo\moonloader\arz_getPlayer.lua:1: '=' expected near 'запроса'
+[23:22:40.512304] (error)	AutoNoProbegSu4ka.lua: X:\SAMP Medium PC by chapo\moonloader\AutoNoProbegSu4ka.lua:40: '=' expected near 'local'
+[23:22:40.517290] (error)	BitStreamReader.lua: X:\SAMP Medium PC by chapo\moonloader\BitStreamReader.lua:145: '=' expected near 'addEventHandler'
+[23:22:40.518287] (error)	BuildRpcWiki.lua: X:\SAMP Medium PC by chapo\moonloader\BuildRpcWiki.lua:85: unexpected symbol near '#'
+[23:22:40.519286] (error)	bulletTrace.lua: X:\SAMP Medium PC by chapo\moonloader\bulletTrace.lua:3: '=' expected near 'local'

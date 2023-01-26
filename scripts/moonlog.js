@@ -1,9 +1,9 @@
-let errors = []
-let libs = {}
+let errors = [];
+let libs = {};
 
 // update lists
-fetch("./scripts/moonloaderErrors.json").then(r => r.json()).then(j => {errors = j})
-fetch("./scripts/moonloaderLibs.json").then(r => r.json()).then(j => {libs = j})
+fetch("./scripts/moonloaderErrors.json").then(r => r.json()).then(j => {errors = j});
+fetch("./scripts/moonloaderLibs.json").then(r => r.json()).then(j => {libs = j});
 
 String.format = function(string, items) {
     for (const val of items) string = string.replace('%s', val);
@@ -39,14 +39,14 @@ function showErrors(text) {
         // get error description
         const error = data[3];
         for (const err of errors) {
-            const result = error.match(err.pattern)
+            const result = error.match(err.pattern);
             if (!result) continue;
-            tip = String.format(err.tip, result.slice(1, 4))
+            tip = String.format(err.tip, result.slice(1, 4));
         }
-        appendError(data, tip)
+        appendError(data, tip);
     }
-    document.getElementById('moonloaderVersion').textContent = `версия moonloader: ${info.moonloaderVersion}`
-    document.getElementById('errorsCount').textContent = `Найденные ошибки: ${info.totalErrors}`
+    document.getElementById('moonloaderVersion').textContent = `версия moonloader: ${info.moonloaderVersion}`;
+    document.getElementById('errorsCount').textContent = `Найденные ошибки: ${info.totalErrors}`;
 }
 
 function appendError(data, tip, button) {
@@ -81,6 +81,7 @@ function appendError(data, tip, button) {
 }
 
 function readText(filePath) {
+    document.getElementById('errorsList').innerHTML = '';
     const reader = new FileReader();
     let output = "";
     if (filePath.files && filePath.files[0]) {           

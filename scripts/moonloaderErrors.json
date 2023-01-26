@@ -40,6 +40,10 @@
         "tip": "Для работы SAMP\\.lua необходимо установить SAMPFUNCS \\( https://www\\.blast\\.hk/threads/17/ \\)"
     }, 
     {
+        "pattern": "lib\\.samp\\.events requires SAMPFUNCS",
+        "tip": "Для работы SAMP\\.lua необходимо установить SAMPFUNCS \\( https://www\\.blast\\.hk/threads/17/ \\)"
+    }, 
+    {
         "pattern": "invalid escape sequence near \\'(.+)\\'",
         "tip": "Неверно экранированный символ рядом с \"%s\""
     }
