@@ -1,48 +1,60 @@
 const errors = [
     {
-        pattern: /'(.+)' expected near '(.+)'/,
+        pattern: "'(.+)' expected near '(.+)'",
         tip: '%s ожидается рядом с %s'
     },
     {
-        pattern: /module '(.+)' not found:/,
+        pattern: "module '(.+)' not found:",
         tip: 'Модуль %s не найден'
     },
     {
-        pattern: /unexpected symbol near '(.+)'/,
+        pattern: "unexpected symbol near '(.+)'",
         tip: 'Неизвестный символ рядом с "%s"'
     },
     {
-        pattern: /'(.+)' expected near '(.+)'/,
+        pattern: "'(.+)' expected near '(.+)'",
         tip: '"%s" ожидается рядом с "%s"'
     },
     {
-        pattern: /'(.+)' expected \(to close '(.+)' at line (.+)\) near '<eof>'/,
+        pattern: "'(.+)' expected \(to close '(.+)' at line (.+)\) near '<eof>'",
         tip: 'ожидается "%s" для закрытия "%s", которая начинается со строки %s'
     },
     {
-        pattern: /attempt to call global '(.+)' \(a nil value\)/,
+        pattern: "attempt to call global '(.+)' \(a nil value\)",
         tip: 'Не удается вызвать %s (пустое значение)'
     },
     {
-        pattern: /bytecode/,
+        pattern: "cannot load incompatible bytecode",
         tip: 'Скрипту требуется другая версия MoonLoader'
     },
     {
-        pattern: /table overflow/,
+        pattern: "table overflow",
         tip: 'Таблица переполнена'
     },
     {
-        pattern: /attempt to index (.+) '(.+)' \(a nil value\)/,
+        pattern: "attempt to index (.+) '(.+)' \(a nil value\)",
         tip: 'не удается получить доступ к %s, значение "%s" не указано (%s == nil)'
     },
     {
-        pattern: /samp\.events requires SAMPFUNCS/,
-        tip: 'Для работы SAMP.lua необходимо установить SAMPFUNCS'
+        pattern: "samp\.events requires SAMPFUNCS",
+        tip: 'Для работы SAMP.lua необходимо установить SAMPFUNCS ( https://www.blast.hk/threads/17/ )'
     }
 ]
 
 const libs = {
-    'imgui': 'https://google.com'
+    'imgui': 'https://www.blast.hk/threads/19292/',
+    'mimgui': 'https://www.blast.hk/threads/66959/',
+    'samp.events': 'https://www.blast.hk/threads/14624/',
+    'lib.samp.events': 'https://www.blast.hk/threads/14624/',
+    'faIcons': 'https://www.blast.hk/threads/111224/',
+    'fAwesome5': 'https://www.blast.hk/threads/111224/',
+    'fAwesome6': 'https://www.blast.hk/threads/111224/',
+    'lanes': 'https://www.blast.hk/threads/122603/post-977695',
+    'requests': 'https://www.blast.hk/threads/16031/post-182937',
+    'SAMemory': 'https://google.com',
+    'lfs': 'https://www.blast.hk/threads/16031/post-815938',
+    'crypto_lua': 'https://google.com',
+    'imgui_addons': 'https://google.com'
 }
 
 String.format = function(string, items) {
@@ -67,8 +79,12 @@ function showErrors(text) {
         // check for module error ("module '*' not found")
         const moduleError = data[3].match(/module '(.+)' not found/)
         if (moduleError) {
-            tip = `Модуль "${moduleError[1]}" не найден. ${libs[moduleError[1]] ? `Скачать: ${libs[moduleError[1]]}` : 'Ссылка на скачивание не найдена'}`
-            appendError(data, tip)
+            tip = `Модуль "${moduleError[1]}" не найден. ${!libs[moduleError[1]] ? 'Ссылка на скачивание не найдена' : ''}`
+            appendError(data, tip, libs[moduleError[1]] ? {
+                text: `СКАЧАТЬ "${moduleError[1]}"`,
+                url: libs[moduleError[1]],
+                style: 'border-width:1px'
+            } : null);
             continue
         }
 
@@ -81,10 +97,11 @@ function showErrors(text) {
         }
         appendError(data, tip)
     }
-    document.getElementById('errorsCount').textContent = `Найденные ошибки: ${info.totalErrors}. ML: ${info.moonloaderVersion}`
+    document.getElementById('moonloaderVersion').textContent = `версия moonloader: ${info.moonloaderVersion}`
+    document.getElementById('errorsCount').textContent = `Найденные ошибки: ${info.totalErrors}`
 }
 
-function appendError(data, tip) {
+function appendError(data, tip, button) {
     let div = document.createElement('div');
     div.setAttribute('class', 'mlerror');
 
@@ -92,15 +109,24 @@ function appendError(data, tip) {
     title.textContent = `${data[1]} (${data[2]}): ${data[3]}`;
     div.appendChild(title);
 
-    let h_tip = document.createElement('h4');
-    h_tip.textContent = tip ?? 'Решение данной проблемы не найдено :(';
-    div.appendChild(h_tip);
+    if (tip) {
+        let h_tip = document.createElement('h4');
+        h_tip.textContent = tip ?? 'Решение данной проблемы не найдено :(';
+        div.appendChild(h_tip);
+    }
+
+    if (button) {
+        let buttonElement = document.createElement('button');
+        buttonElement.textContent = button?.text ?? 'none';
+        buttonElement.setAttribute('style', button?.style ?? '')
+        buttonElement.onclick = () => window.location = button?.url ?? 'https://google.com' 
+        div.appendChild(buttonElement)
+    }
     
     document.getElementById('errorsList').appendChild(div);
 }
 
 function readText(filePath) {
-    //alert(errors.test)
     const reader = new FileReader();
     let output = "";
     if (filePath.files && filePath.files[0]) {           
