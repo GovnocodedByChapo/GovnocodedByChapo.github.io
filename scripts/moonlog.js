@@ -1,4 +1,5 @@
-const errors = [
+/*
+let errors = [
     {
         pattern: "'(.+)' expected near '(.+)'",
         tip: '%s ожидается рядом с %s'
@@ -16,8 +17,8 @@ const errors = [
         tip: '"%s" ожидается рядом с "%s"'
     },
     {
-        pattern: "'(.+)' expected \(to close '(.+)' at line (.+)\) near '<eof>'",
-        tip: 'ожидается "%s" для закрытия "%s", которая начинается со строки %s'
+        pattern: "'(.+)' expected \(to close '(.+)' at line (.+)\) near '(.+)'",
+        tip: 'ожидается "%s" для закрытия "%s", которая начинается со строки %s (%s)'
     },
     {
         pattern: "attempt to call global '(.+)' \(a nil value\)",
@@ -32,14 +33,24 @@ const errors = [
         tip: 'Таблица переполнена'
     },
     {
-        pattern: "attempt to index (.+) '(.+)' \(a nil value\)",
-        tip: 'не удается получить доступ к %s, значение "%s" не указано (%s == nil)'
+        pattern: "attempt to index (.+) '(.+)' (.+)",
+        tip: 'не удается получить доступ к %s, значение "%s" не указано %s'
     },
     {
         pattern: "samp\.events requires SAMPFUNCS",
         tip: 'Для работы SAMP.lua необходимо установить SAMPFUNCS ( https://www.blast.hk/threads/17/ )'
-    }
-]
+    }, 
+    {
+        pattern: "invalid escape sequence near \'(.+)\'",
+        tip: 'Неверно экранированный символ рядом с "%s"'
+    },
+]*/
+let errors = []
+
+fetch("./scripts/moonloaderErrors.json").then(r => r.json()).then(j => {
+    console.log('ERRORS LIST UPDATED!')
+    errors = j
+})
 
 const libs = {
     'imgui': 'https://www.blast.hk/threads/19292/',
@@ -87,7 +98,7 @@ function showErrors(text) {
             } : null);
             continue
         }
-
+        
         // get error description
         const error = data[3];
         for (const err of errors) {
@@ -106,8 +117,14 @@ function appendError(data, tip, button) {
     div.setAttribute('class', 'mlerror');
 
     let title = document.createElement('h3');
-    title.textContent = `${data[1]} (${data[2]}): ${data[3]}`;
+    title.textContent = data[1];
     div.appendChild(title);
+
+    if (data[2] && data[3]) {
+        let errorElement = document.createElement('h5');
+        errorElement.textContent = `Строка #${data[2]}: ${data[3]}`;
+        div.appendChild(errorElement);
+    }
 
     if (tip) {
         let h_tip = document.createElement('h4');
