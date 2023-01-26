@@ -1,72 +1,9 @@
-/*
-let errors = [
-    {
-        pattern: "'(.+)' expected near '(.+)'",
-        tip: '%s ожидается рядом с %s'
-    },
-    {
-        pattern: "module '(.+)' not found:",
-        tip: 'Модуль %s не найден'
-    },
-    {
-        pattern: "unexpected symbol near '(.+)'",
-        tip: 'Неизвестный символ рядом с "%s"'
-    },
-    {
-        pattern: "'(.+)' expected near '(.+)'",
-        tip: '"%s" ожидается рядом с "%s"'
-    },
-    {
-        pattern: "'(.+)' expected \(to close '(.+)' at line (.+)\) near '(.+)'",
-        tip: 'ожидается "%s" для закрытия "%s", которая начинается со строки %s (%s)'
-    },
-    {
-        pattern: "attempt to call global '(.+)' \(a nil value\)",
-        tip: 'Не удается вызвать %s (пустое значение)'
-    },
-    {
-        pattern: "cannot load incompatible bytecode",
-        tip: 'Скрипту требуется другая версия MoonLoader'
-    },
-    {
-        pattern: "table overflow",
-        tip: 'Таблица переполнена'
-    },
-    {
-        pattern: "attempt to index (.+) '(.+)' (.+)",
-        tip: 'не удается получить доступ к %s, значение "%s" не указано %s'
-    },
-    {
-        pattern: "samp\.events requires SAMPFUNCS",
-        tip: 'Для работы SAMP.lua необходимо установить SAMPFUNCS ( https://www.blast.hk/threads/17/ )'
-    }, 
-    {
-        pattern: "invalid escape sequence near \'(.+)\'",
-        tip: 'Неверно экранированный символ рядом с "%s"'
-    },
-]*/
 let errors = []
+let libs = {}
 
-fetch("./scripts/moonloaderErrors.json").then(r => r.json()).then(j => {
-    console.log('ERRORS LIST UPDATED!')
-    errors = j
-})
-
-const libs = {
-    'imgui': 'https://www.blast.hk/threads/19292/',
-    'mimgui': 'https://www.blast.hk/threads/66959/',
-    'samp.events': 'https://www.blast.hk/threads/14624/',
-    'lib.samp.events': 'https://www.blast.hk/threads/14624/',
-    'faIcons': 'https://www.blast.hk/threads/111224/',
-    'fAwesome5': 'https://www.blast.hk/threads/111224/',
-    'fAwesome6': 'https://www.blast.hk/threads/111224/',
-    'lanes': 'https://www.blast.hk/threads/122603/post-977695',
-    'requests': 'https://www.blast.hk/threads/16031/post-182937',
-    'SAMemory': 'https://google.com',
-    'lfs': 'https://www.blast.hk/threads/16031/post-815938',
-    'crypto_lua': 'https://google.com',
-    'imgui_addons': 'https://google.com'
-}
+// update lists
+fetch("./scripts/moonloaderErrors.json").then(r => r.json()).then(j => {errors = j})
+fetch("./scripts/moonloaderLibs.json").then(r => r.json()).then(j => {libs = j})
 
 String.format = function(string, items) {
     for (const val of items) string = string.replace('%s', val);
