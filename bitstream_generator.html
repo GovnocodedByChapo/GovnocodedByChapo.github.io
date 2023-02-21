@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SA:MP RPC BitStream Generator</title>
+</head>
+<body>
+    <link href="style/bitstream.css" rel="stylesheet">
+    <script src="scripts/bitstreamGenerator.js"></script>
+    
+    <div class="card">
+        <h2>BitStream generator</h2>
+        RPC ID:
+        <!-- <input id="id" value="101"> -->
+        <select id="RPCLIST" class="pizda">
+
+        </select>
+    </div>
+    <br>
+    <div class="card" id="inputsField">
+        <!-- <div class="bitStreamItem">
+            Message length
+            <br>
+            int8
+            <input>
+        </div>
+
+        <div class="bitStreamItem">
+            Message length
+            <br>
+            int8
+            <input>
+        </div> -->
+    </div>
+    <br>
+    <div class="card">
+        <select id="mode" class="pizda">
+            <option>read</option>
+            <option>write</option>
+        </select>
+        <button id="generate">
+            GENERATE CODE
+        </button>
+        <textarea id="codeResult" class="pizda codeResult" readonly>
+
+        </textarea>
+    </div>
+</body>
+</html>

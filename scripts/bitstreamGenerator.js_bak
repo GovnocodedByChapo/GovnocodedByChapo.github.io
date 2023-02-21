@@ -1,0 +1,83 @@
+const RPC = {
+    "101":{
+        "description":"unknown",
+        "name":"CHAT",
+        "type":"outcoming",
+        "bitStream":[
+            [
+                "message size",
+                "int8"
+            ],
+            [
+                "message",
+                "string"
+            ]
+        ]
+    },
+};
+//fetch("./scripts/rpc.json").then(r => r.json()).then(j => {RPC = j});
+
+addEventListener('DOMContentLoaded', () => {
+    buildPageForBitStream(101);
+    document.getElementById('generate').addEventListener('click', () => {
+        const mode = document.getElementById('mode').value;
+        const id = document.getElementById('id').value;
+        generate();
+    });
+});
+
+const types = {
+
+};
+let bs = [];
+
+const buildPageForBitStream = (id) => {
+    const field = document.getElementById('inputsField');
+    field.innerHTML = '';
+    bs = RPC[id].bitStream;
+    let itemIndex = -1;
+    for (const item of bs) {
+        itemIndex++;
+        field.innerHTML += `<div class="bitStreamItem">${item[0]}<br>${item[1]}<input id="bs_${itemIndex}"></div>`
+    }
+}
+
+const generate = () => {
+    // types
+    const type = {
+        int8: {
+            read: 'raknetBitStreamReadInt8(bs)',
+            write: 'raknetBitStreamWriteInt8(bs, __VALUE__)'
+        },
+        int16: {
+            read: 'raknetBitStreamReadInt16(bs)',
+            write: 'raknetBitStreamWriteInt16(bs, __VALUE__)'
+        },
+        int32: {
+            read: 'raknetBitStreamReadInt32(bs)',
+            write: 'raknetBitStreamWriteInt32(bs, __VALUE__)'
+        },
+        string: {
+            read: 'raknetBitStreamReadString(bs, __PREVITEM__)',
+            write: 'raknetBitStreamWriteString(bs, \'__VALUE__\')'
+        }
+    };
+
+    // get bitstream
+    const mode = document.getElementById('mode').value;
+    const output = [];
+    for (let index = 0; index < bs.length; index++) {
+        const value = document.getElementById(`bs_${index}`).value;
+        const replaces = [
+            ['__VALUE__', value],
+            ['__PREVITEM__', document.getElementById(`bs_${index-1}`)?.value ?? 'suka'],
+        ]
+        
+        let line = type[bs[index][1]][mode];
+        for (const rep of replaces) {
+            line = line.replace(rep[0], rep[1]);
+        };
+        output.push(line);
+    };
+    console.log(output.join('\n'))
+}
