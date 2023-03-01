@@ -5,8 +5,10 @@ const buttons = [
     {short: 'vk_group', text: 'ГРУППА В VK', url: 'https://vk.com/chaposcripts'},
     {short: 'tg', text: 'TELEGRAM', url: 'https://telegram.me/ya_chapo'},
     {short: 'discord', text: 'DISCORD', url: 'https://discord.com/invite/4fNcFYE6WP'},
-    {short: 'bh', text: 'ПРОФИЛЬ НА BLASTHACK', url: 'https://www.blast.hk/members/112329/'},
+    {short: 'bh', text: 'BlastHack', url: 'https://www.blast.hk/members/112329/'},
     {short: 'github', text: 'GITHUB', url: 'https://github.com/GovnocodedByChapo?tab=repositories'},
+    {short: 'moonlogcheck', text: 'MoonLog Checker', url: 'https://govnocodedbychapo.github.io/moonlog.html'},
+    {short: 'bitstreamgen', text: 'BitStream Generator', url: 'https://govnocodedbychapo.github.io/bitstream_generator.html'}
 ]
 
 function openUrl(url) {
