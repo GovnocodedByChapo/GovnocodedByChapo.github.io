@@ -48,10 +48,11 @@ body {
 }
 
 .links {
-    margin-top: 50px;
+    margin-top: 60px;
     height: auto;
     margin-left: 138px;
     position: absolute;
+    margin-bottom: 0px;
     /* background-color: red; */
 }
 
@@ -77,7 +78,7 @@ body {
     transition: 0.2s all ease-in;
 }
 
-.bg h4 {
+.bg a {
     /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
     font-size: 14px;
     color: gray;
@@ -112,7 +113,6 @@ body {
     height: 40px;
     background-color: rgba(255, 255, 255, 0.1);
     /* color: black; */
-    border-style: solid;
     border-radius: 5px;
     /* border-color: white; */
     border-width: 1px;
