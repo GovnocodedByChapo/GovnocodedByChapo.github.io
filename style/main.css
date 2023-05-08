@@ -1,0 +1,119 @@
+@font-face {
+    font-family: "MontserratExtraLight"; 
+    src: url("../fonts/Montserrat-ExtraLight.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+@font-face {
+    font-family: "MontserratLight"; 
+    src: url("../fonts/Montserrat-Light.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+
+* {
+    font-family: MontserratLight;
+}
+
+body {
+    background-color: #1c1c1c;
+}
+
+.bg {
+    padding: 10px;
+    background-color: rgba(1, 1, 1, 0.3);
+    width: 512px;
+    height: auto;
+    margin: auto;
+    border-radius: 10px;   
+    display: flex;
+}
+
+.bg h1 {
+    margin-left: 10px;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    color: white;
+}
+
+.projectTitle {
+    margin-left: 10px;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    color: white;
+    text-align: center;
+}
+
+.bg img {
+    width: 128px;
+    border-radius: 10px;
+}
+
+.links {
+    margin-top: 50px;
+    height: auto;
+    margin-left: 138px;
+    position: absolute;
+    /* background-color: red; */
+}
+
+.links a {
+    text-decoration: none
+}
+
+.bg .linkButton {
+    position:relative;
+    background-color: transparent;
+    transition: 0.2s all ease-in;
+    width: 64px;
+    height: 24px;
+    border-style: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+
+.bg .linkButton:hover {
+    background-color: white;
+    color: black;
+    transition: 0.2s all ease-in;
+}
+
+.bg h4 {
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-size: 14px;
+    color: gray;
+    
+    /* margin-left: 10px; */
+    /* margin-top: 38px; */
+}
+
+.projects {
+    display: block;
+    margin: auto;
+}
+
+.projectButton {
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    color: white;
+    border-style: solid;
+    border-radius: 5px;
+    border-style: none;
+    /* border-color: white; */
+    border-width: 1px;
+    transition: 0.2s all ease-in;
+    margin-top: 10px;
+}
+
+.projectButton:hover {
+    width: 100%;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* color: black; */
+    border-style: solid;
+    border-radius: 5px;
+    /* border-color: white; */
+    border-width: 1px;
+}
