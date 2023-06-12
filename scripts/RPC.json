@@ -1,4 +1,30 @@
 {
+    "44": {
+        "description":"unknown",
+        "name":"CreateObject",
+        "type":"incoming",
+        "bitStream":[
+            ["wObjectID", "int16"], 
+            ["ModelID", "int32"], 
+            ["x", "float"], 
+            ["y", "float"], 
+            ["z", "float"], 
+            ["rotx", "float"], 
+            ["roty", "float"], 
+            ["rotz", "float"], 
+            ["DrawDistance", "float"], 
+            ["NoCameraCol", "int8"], 
+            ["attachedObject", "int16"],
+            ["attachedVehicle", "int16"], 
+            ["AttachOffsetX", "float"], 
+            ["AttachOffsetY", "float"], 
+            ["AttachOffsetZ", "float"], 
+            ["AttachRotX", "float"], 
+            ["AttachRotY", "float"], 
+            ["AttachRotZ", "float"], 
+            ["SyncRotation", "int8"]
+        ]
+    },
     "16":{
         "description":"unknown",
         "name":"SCRPLAYSOUND",
