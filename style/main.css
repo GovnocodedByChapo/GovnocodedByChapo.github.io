@@ -11,6 +11,10 @@
     font-weight: normal; 
 } 
 
+.generateHero {
+    margin-left: 50%;
+}
+
 * {
     font-family: MontserratLight;
 }

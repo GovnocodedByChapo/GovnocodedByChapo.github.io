@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "MontserratExtraLight"; 
+    src: url("../fonts/Montserrat-ExtraLight.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+@font-face {
+    font-family: "MontserratLight"; 
+    src: url("../fonts/Montserrat-Light.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+
+body {
+    font-family: MontserratLight;
+    background-color: #1c1c1c;
+}
+
+.bg {
+    padding: 10px;
+    width: 300px;
+    padding-top: 10px;
+    height: auto;
+    border-radius: 5px;
+    margin: auto;
+    background-color: rgba(1, 1, 1, 0.3);
+}
+
+.heroImage {
+    margin: auto;
+    margin-left: 50px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.generateHero {
+    width: 300px;
+    height: 30px;
+
+}
+
+label {
+    color: white;
+    font-family: MontserratLight;
+}
+
+.heroName {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
